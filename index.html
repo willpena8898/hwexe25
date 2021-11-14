@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Currency Converter
+    </title>
+
+    <style>
+        body {
+            background: linear-gradient(to right, darkgreen 0%, hotpink 100%);
+            color: white;
+        }
+
+        
+
+        .tableclass {
+            border: solid white 5px;
+        }
+
+        img {
+            width: 350px;
+            height: auto;
+            border-radius: 3rem;
+        }
+
+        a:link,
+        a:visited {
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <table class="tableclass">
+        <tr>
+            <td>
+                <h1>Currency Converter</h1>
+                <h3>Convert USA Dollars to other currencies.</h3>
+                <form name="theform">
+                    <table>
+                        <tr>
+                            <td rowspan="10"><img src="money.jpg" alt="picture of currency"></td>
+                            <td style="float: right"><strong>Enter USA dollar amount :</strong></td>
+                            <td><input name="usFmInput" size="10"></td>
+                        </tr>
+
+                        <tr>
+                            <td style="float: right"><strong>Euro :</strong></td>
+                            <td style="background-color: white; color: black; font-weight: bold; " id="euFmOutput"></td>
+
+                        </tr>
+
+                        <tr>
+                            <td style="float: right"><strong>Pound sterling :</strong></td>
+                            <td style="background-color: white; color: black; font-weight: bold;" id="poFmOutput"></td>
+                        </tr>
+
+                        <tr>
+                            <td style="float: right"><strong>Australian Dollar :</strong></td>
+                            <td style="background-color: white; color: black; font-weight: bold;" id="auFmOutput"></td>
+                        </tr>
+
+                        <tr>
+                            <td style="float: right"><strong>Mexican Pesos :</strong></td>
+                            <td style="background-color: white; color: black; font-weight: bold;" id="meFmOutput"></td>
+                        </tr>
+
+                        <tr>
+                            <td style="float: right"><strong>Canadian Dollar :</strong></td>
+                            <td style="background-color: white; color: black; font-weight: bold;" id="caFmOutput"></td>
+                        </tr>
+
+                        <tr>
+                            <td style="float: right"><strong>Turkish lira :</strong></td>
+                            <td style="background-color: white; color: black; font-weight: bold;" id="tuFmOutput"></td>
+                        </tr>
+
+                        <tr>
+                            <td style="float: right"><strong>Japanese yen :</strong></td>
+                            <td style="background-color: white; color: black; font-weight: bold;" id="jaFmOutput"></td>
+                        </tr>
+
+                        <tr>
+                            <td style="float: right"><strong>Swiss franc :</strong></td>
+                            <td style="background-color: white; color: black; font-weight: bold;" id="swFmOutput"></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <input type="button" name="calc" value="Calculate" onclick="calculate();">
+                                <input type="button" name="clear" value="Clear" onclick="clearinfo();">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <script>
+        document.theform.usFmInput.focus();
+
+        function calculate() {
+            //declare variables
+            var us;
+            var euro;
+            var pound;
+            var australian;
+            var mexican;
+            var canadian;
+            var turkish;
+            var japanese;
+            var swiss;
+
+            //get value from text field
+            us = parseFloat(document.theform.usFmInput.value);
+
+
+            //calculate from us dollars to other currencies
+            euro = parseFloat(us * .84);
+            pound = parseFloat(us * .77);
+            australian = parseFloat(us * 1.40);
+            mexican = parseFloat(us * 20.86);
+            canadian = parseFloat(us * 1.31);
+            turkish = parseFloat(us * 7.96);
+            japanese = parseFloat(us * 104.76);
+            swiss = parseFloat(us * .90);
+
+            //display the currencies 
+            document.getElementById("euFmOutput").innerHTML = ('$ ') + euro.toFixed(2);
+            document.getElementById("poFmOutput").innerHTML = ('$ ') + pound.toFixed(2);
+            document.getElementById("auFmOutput").innerHTML = ('$ ') + australian.toFixed(2);
+            document.getElementById("meFmOutput").innerHTML = ('$ ') + mexican.toFixed(2);
+            document.getElementById("caFmOutput").innerHTML = ('$ ') + canadian.toFixed(2);
+            document.getElementById("tuFmOutput").innerHTML = ('$ ') + turkish.toFixed(2);
+            document.getElementById("jaFmOutput").innerHTML = ('$ ') + japanese.toFixed(2);
+            document.getElementById("swFmOutput").innerHTML = ('$ ') + swiss.toFixed(2);
+
+        }
+
+        //clear celcius calculator
+        function clearinfo() {
+            document.theform.usFmInput.value = " ";
+            document.getElementById("euFmOutput").innerHTML = " ";
+            document.getElementById("poFmOutput").innerHTML = " ";
+            document.getElementById("auFmOutput").innerHTML = " ";
+            document.getElementById("meFmOutput").innerHTML = " ";
+            document.getElementById("caFmOutput").innerHTML = " ";
+            document.getElementById("tuFmOutput").innerHTML = " ";
+            document.getElementById("jaFmOutput").innerHTML = " ";
+            document.getElementById("swFmOutput").innerHTML = " ";
+
+            document.theform.usFmInput.focus();
+        }
+    </script>
+
+<p></p>
+
+<a href="http://csnet.southtexascollege.edu/localuser/wpena1/">Go Back to HomePage</a>
+<p>William Pena</p>
+
+</body>
+
+</html>
